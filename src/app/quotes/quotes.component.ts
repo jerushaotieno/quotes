@@ -17,10 +17,20 @@ export class QuotesComponent implements OnInit {
     new Quote(6, 'Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', new Date(2022,2,1),0,0)
   ];
 
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+
+  completeQuote(isComplete: any, index: number){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
+
 constructor(){}
 
 ngOnInit(){
-  
+
 }
 
 }
