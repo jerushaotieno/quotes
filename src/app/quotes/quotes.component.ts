@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { title } from 'process';
 import { Quote } from '../quote';
 
 @Component({
@@ -9,7 +8,6 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
 
-  title = 'Share a Quote';
   quotes:Quote[] = [
     new Quote(1, 'Jay', 'Dreams', 'When you have a dream, you’ve got to grab it and never let go.', 'Carol Burnett', new Date(2022,2,5), 0,0),
     new Quote(2, 'Lucy', 'Willpower', 'Nothing is impossible. The word itself says ‘I’m possible!', 'Audrey Hepburn', new Date(2022,2,4), 0,0),
@@ -19,5 +17,10 @@ export class QuotesComponent implements OnInit {
     new Quote(6, 'Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', new Date(2022,2,1),0,0)
   ];
 
+constructor(){}
+
+ngOnInit(){
   
+}
+
 }

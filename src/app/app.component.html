@@ -4,7 +4,10 @@
   </h1>
   <ul>
     <li ngFor='let quote of quotes'>
-      {{quote}}
+      {{quote.name}}
     </li>
   </ul>
+  <p *ngIf='quotes.length > 6'>Your quotes are too many</p>
 </div>
+
+<app-quote></app-quote>
