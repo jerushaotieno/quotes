@@ -1,13 +1,21 @@
-<h1>Share a Quote</h1>
-<ul>
-    <div *ngFor='let quote of quotes;let i = index'>
-        <li appStrikethrough> {{quote.name}} posted on {{quote.completeDate|date|uppercase}} </li>
-        <button  (click)='toggleDetails(i)'>Toggle Details</button>
-
-    <app-quotes-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'completeQuote($event,i)'></app-quotes-details>
-    
+<div class="container">
+    <h1>Share a quote</h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let quote of quotes;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
+  
+          <div *ngIf='quote.showDescription'>
+            <app-quotes-detail  [quote]='qquote' (isComplete) = 'deleteQuote($event,i)'></app-quotes-detail>
+          </div>
+        </div>
+      </div>
     </div>
-</ul>
-<p *ngIf='quotes.length > 5'>You have too many quotes</p>
-
-<app-quotes-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quotes-detail>
+  
+    <p *ngIf='quotes.length > 6'>You have too many quotes</p>
+  </div>
