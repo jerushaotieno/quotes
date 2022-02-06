@@ -15,5 +15,6 @@ export class AppComponent {
     new Quote(5, 'Wanjiru', 'Hardship', 'Keep your face always toward the sunshine, and shadows will fall behind you.', 'Walt Whitman', new Date(2022,2,2),0,0),
     new Quote(6, 'Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', new Date(2022,2,1),0,0)
   ];
+  title: any;
   
 }
