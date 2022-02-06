@@ -17,7 +17,7 @@ export class QuotesComponent implements OnInit {
     new Quote(6, 'Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', new Date(2022,2,1),0,0)
   ];
 
-  toggleDetails(index){
+  toggleDetails(index: number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
 
@@ -27,7 +27,7 @@ export class QuotesComponent implements OnInit {
     }
   }
 
-  deleteQuote(isComplete, index){
+  deleteQuote(isComplete: any, index: number){
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
 
