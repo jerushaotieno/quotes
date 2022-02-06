@@ -9,3 +9,5 @@
     </div>
 </ul>
 <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+
+<app-quotes-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quotes-detail>
