@@ -6,6 +6,7 @@
       <div class="col-md-6">
         <div *ngFor='let quote of quotes;let i = index'>
           <div>
+            {{quote.quote}}
             <h6 appStrikethrough>{{quote.name}} posted on {{quote.completeDate}}</h6>
             <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
           </div>
@@ -14,23 +15,12 @@
             <app-quotes-detail  [quote]='quote' (isComplete) = 'deleteQuote(i)'></app-quotes-detail>
           </div>
 
-          <div *ngIf='quote.showDescription'>
-            <app-quotes-detail  [quote]='quote'></app-quotes-detail>app-quotes-detail/>
-          </div>
         </div>
       </div>
       <div class="col-md-6">
         <app-quote-form></app-quote-form>
       </div>
     </div>
-
-    <div class="col-md-6">
-        <app-quote-form (addQuote)="addQuote($event)"></app-quote-form>
-   </div>
-
-   <div class="col-md-6">
-    <app-quote-form></app-quote-form>
-</div>
 
     <p *ngIf='quotes.length > 6'>You have too many quotes</p>
   </div>
