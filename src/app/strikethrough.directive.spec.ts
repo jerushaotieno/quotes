@@ -6,3 +6,4 @@ describe('StrikethroughDirective', () => {
     expect(directive).toBeTruthy();
   });
 });
+Date
