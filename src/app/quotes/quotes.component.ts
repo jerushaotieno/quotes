@@ -9,12 +9,12 @@ import { Quote } from '../quote';
 export class QuotesComponent implements OnInit {
 
   quotes:Quote[] = [
-    new Quote('Jay', 'Dreams', 'When you have a dream, you’ve got to grab it and never let go.', 'Carol Burnett', new Date(2022,2,5)),
-    new Quote('Lucy', 'Willpower', 'Nothing is impossible. The word itself says ‘I’m possible!', 'Audrey Hepburn', new Date(2022,2,4)),
-    new Quote('Jack', 'Willpower', 'There is nothing impossible to they who will try.', 'Alexander the Great', new Date(2022,2,3)),
-    new Quote('Abdul', 'Time', 'The bad news is time flies. The good news is you are the pilot.', 'Michael Altshuler', new Date(2022,2,2)),
-    new Quote('Wanjiru', 'Hardship', 'Keep your face always toward the sunshine, and shadows will fall behind you.', 'Walt Whitman', new Date(2022,2,2)),
-    new Quote('Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', 'Winston Churchill', new Date(2022,2,1))
+    new Quote('Jay', 'Dreams', 'When you have a dream, you’ve got to grab it and never let go.', 'Carol Burnett', new Date(2010,1,1)),
+    new Quote('Lucy', 'Willpower', 'Nothing is impossible. The word itself says ‘I’m possible!', 'Audrey Hepburn', new Date(2018,2,4)),
+    new Quote('Jack', 'Willpower', 'There is nothing impossible to they who will try.', 'Alexander the Great', new Date(2009,2,3)),
+    new Quote('Abdul', 'Time', 'The bad news is time flies. The good news is you are the pilot.', 'Michael Altshuler', new Date(2012,2,2)),
+    new Quote('Wanjiru', 'Hardship', 'Keep your face always toward the sunshine, and shadows will fall behind you.', 'Walt Whitman', new Date(2008,2,2)),
+    new Quote('Othuol', 'Success', 'Success is not final, failure is not fatal: it is the courage to continue that counts', 'Winston Churchill', new Date(2006,2,1))
   ];
 
   toggleDetails(index: number){
@@ -41,24 +41,11 @@ export class QuotesComponent implements OnInit {
     this.quotes.splice(index,1)
   }
 
-  addQuote(quote:Quote){
-    // if () {
-    //   let toAddQuote = confirm(`Are you sure you want to add ${this.quotes[index].name}?`)
-
-    //   if (toAddQuote){
-    //     this.quotes.splice(index,1)
-    //   }
-    // }
-
-    this.quotes.push(quote)
+  save(quote:Quote){
+    quote.completeDate=new Date(quote.completeDate)
+    let quoteCopy = {...quote}
+    this.quotes.unshift(quoteCopy)
   }
-
-  // addNewQuote(quote: Quote){
-  //   let quoteLength = this.quotes.length;
-  //   quote.id = quoteLength+1;
-  //   quote.completeDate = new Date(quote.completeDate)
-  //   this.quotes.push(quote)
-  // }
 
 constructor(){}
 
