@@ -1,3 +1,9 @@
 <p>{{quote.description}}</p>
 <p>This quote was posted {{quote.completeDate|dateCount}} days ago</p>
-<button (click)= 'quoteDelete(true)'>Delete Quote</button>
+<div class="d-flex justify-content-between">
+    <div>
+        <button class="btn btn-success mx-1" (click)='Upvote()' >Upvote {{quote.upvote}} </button>
+        <button class="btn btn-danger mx-1" (click)='Downvote()' >Downvote {{quote.downvote}} </button>
+    </div>
+    <button class="btn btn-outline-primary" (click)= 'quoteDelete()'>Delete Quote</button>
+</div>
