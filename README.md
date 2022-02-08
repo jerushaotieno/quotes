@@ -7,7 +7,7 @@ LinkedIn - Jerusha Otieno
 # Quotes Description
 
 This is an application that displays quotes, allows the user to input a new quote, upvote or downvote it, and gives the option of also deleting the quote. It is generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
-
+ 
 # Live Link
 
 https://jerushaotieno.github.io/quotes/
